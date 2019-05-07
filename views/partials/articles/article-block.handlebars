@@ -1,0 +1,19 @@
+<li class="results-li">
+	<div class="container card">
+		<div class="row article-item">
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<img src="{{image}}" width="300px">
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<h4><a href="{{link}}">{{title}}</a></h4>
+				<button class="view-article btn btn-outline-primary" data-id="{{this._id}}" href="{{link}}">
+					<a href="{{link}}">View</a>
+				</button>
+
+				<button class="save-article btn btn-outline-success" data-id="{{_id}}" data-newsaved="{{saved}}">
+					{{#if saved}}Remove from Saved{{else}}Save{{/if}}
+				</button>
+			</div>
+		</div>
+	</div>
+</li>

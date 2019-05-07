@@ -1,0 +1,13 @@
+li.results-li {
+
+    padding: 10px;
+}
+
+ul.articles-ul {
+    list-style-type: none;
+}
+
+.article-item {
+    padding: 25px;
+    background-color: rgb(238, 175, 194);
+}
