@@ -10,6 +10,11 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newsScraper";
+
+mongoose.connect(MONGODB_URI);
+
 var PORT = 3000;
 
 // Initialize Express
@@ -27,7 +32,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/newsScraper", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost/newsScraper", { useNewUrlParser: true });
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
