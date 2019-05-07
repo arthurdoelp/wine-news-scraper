@@ -15,7 +15,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 
 mongoose.connect(MONGODB_URI);
 
-var PORT = 3000;
+var PORT = proces.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
@@ -91,7 +91,7 @@ app.get("/saved", function (req, res) {
 });
 
 // Route for getting all Articles from the db
-app.get("", function (req, res) {
+app.get("/", function (req, res) {
   // Grab every document in the Articles collection
   db.Article.find({})
     .then(function (dbArticle) {
